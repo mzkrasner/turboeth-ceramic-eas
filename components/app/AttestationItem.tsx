@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import { ethers } from 'ethers'
 import { MdOutlineVerified, MdVerified } from 'react-icons/md'
 import styled from 'styled-components'
-import { useAccount, useWalletClient } from 'wagmi'
+import { useAccount } from 'wagmi'
 
 import { Identicon } from './Identicon'
 import { theme } from '../../app/utils/theme'
@@ -108,7 +108,6 @@ export function AttestationItem({ data }: Props) {
   const isConfirmable = !isAttester && !isConfirmed
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data: signer } = useWalletClient()
 
   let Icon = MdVerified
 

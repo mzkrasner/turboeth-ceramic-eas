@@ -8,7 +8,7 @@ import { ethers } from 'ethers'
 import { motion } from 'framer-motion'
 import Balancer from 'react-wrap-balancer'
 import styled from 'styled-components'
-import { useAccount, useWalletClient } from 'wagmi'
+import { useAccount } from 'wagmi'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/config/design'
 
@@ -123,7 +123,6 @@ const eas = new EAS(EASContractAddress)
 export default function Home() {
   const account = useAccount()
   const status = account.status
-  const { data: signer } = useWalletClient()
   const [copied, setCopied] = useState(false)
   const [address, setAddress] = useState('')
   const [ensResolvedAddress, setEnsResolvedAddress] = useState('Dakh.eth')
