@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BinaryIcon, DatabaseIcon, LayoutDashboard, LogOutIcon } from 'lucide-react'
+import { BinaryIcon, LayoutDashboard, LogOutIcon } from 'lucide-react'
 import Link from 'next/link'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -22,16 +22,16 @@ export function UserDropdown() {
           <div className="w-full rounded-md p-2 ">
             <Link className="user-dropdown-menu-item" href="/">
               <BinaryIcon className="h-4 w-4" />
-              <p className="text-sm">Site</p>
+              <p className="text-sm">Home</p>
             </Link>
             <Link className="user-dropdown-menu-item " href="/dashboard">
               <LayoutDashboard className="h-4 w-4" />
               <p className="text-sm">Dashboard</p>
             </Link>
-            <Link className="user-dropdown-menu-item " href="/admin">
+            {/* <Link className="user-dropdown-menu-item " href="/admin">
               <DatabaseIcon className="h-4 w-4" />
               <p className="text-sm">Admin</p>
-            </Link>
+            </Link> */}
             <BranchIsAuthenticated>
               <ButtonSIWELogout className="user-dropdown-menu-item flex">
                 <LogOutIcon className="h-4 w-4" />

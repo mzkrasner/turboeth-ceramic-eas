@@ -19,16 +19,16 @@ interface SiteConfig {
 export const SITE_CANONICAL = 'https://turboeth.xyz'
 
 export const siteConfig: SiteConfig = {
-  name: 'TurboETH',
-  title: 'TurboETH - Web3 App Template',
+  name: 'MetIRL',
+  title: 'MetIRL - EAS with ComposeDB',
   emoji: '⚡',
-  description: 'Web3 App Template built using Next.js, RainbowKit, SIWE, Disco, and more!',
-  previewImg: `${SITE_CANONICAL}/preview.png`,
+  description: 'Web3 App built using EAS with ComposeDB',
+  previewImg: `${SITE_CANONICAL}/eas-summary.png`,
   localeDefault: 'en',
   links: {
-    docs: 'https://docs.turboeth.xyz/overview',
-    discord: 'https://discord.gg/U4jy7Xfh76',
-    github: 'https://github.com/turbo-eth',
-    twitter: 'https://twitter.com/district_labs',
+    docs: '',
+    discord: '',
+    github: '',
+    twitter: '',
   },
 }

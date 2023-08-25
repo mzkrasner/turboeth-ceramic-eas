@@ -1,44 +1,31 @@
 ![image](https://user-images.githubusercontent.com/3408362/230732083-1c98e451-08af-41c2-b522-126370e8c6a5.png)
 
-# ⚡ TurboETH - Web3 App Template
-Web3 App Template built using Next.js, RainbowKit, SIWE, Disco, and more!
+# ⚡ TurboETH with Ceramic and EAS 
+Web3 App Template starter kit using Next.js, RainbowKit, SIWE, Ceramic, and EAS
 
-### Starter Kit Examples
-- [Main](https://light.turboeth.xyz) - `main` branch
-- [Heavy](https://turboeth.xyz) - `integrations` branch
-
-Deploy TurboETH `main` directly to [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app&project-name=TurboETH&repository-name=turbo-eth&demo-title=TurboETH&env=NEXTAUTH_SECRET,DATABASE_URL&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app%2Fblob%2Fmain%2F.env.example)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app&project-name=TurboETH&repository-name=turbo-eth&demo-title=TurboETH&env=NEXTAUTH_SECRET,DATABASE_URL&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app%2Fblob%2Fmain%2F.env.example)
-
-
-### [Documentation](https://docs.turboeth.xyz)
-- Getting Started
-  - [Environment Variables](https://docs.turboeth.xyz/getting-started/environment)
-  - [JSON-RPC](https://docs.turboeth.xyz/getting-started/json-rpc)
-  - [WAGMI CLI](https://docs.turboeth.xyz/getting-started/wagmi-cli)
-  - [UI Components](https://docs.turboeth.xyz/getting-started/design-system)
-  - [Backend Database](https://docs.turboeth.xyz/getting-started/database)
- - Core Integrations
-   - [🌈 RainbowKit](https://docs.turboeth.xyz/integration/rainbowkit)
-   - [🔏 Sign-In With Ethereum](https://docs.turboeth.xyz/integration/sign-in-with-ethereum)
-- Smart Contract Integrations
-  - [ERC20](https://docs.turboeth.xyz/integration/smart-contract-erc20)
-- API Integrations
-  - [Disco](https://docs.turboeth.xyz/integration/disco)
-  - [Etherscan](https://docs.turboeth.xyz/integration/etherscan)
+For more on TurboETH, visit the [Documentation](https://docs.turboeth.xyz)
 
 # Getting Started
 
 The `pnpm` CLI is the recommended package manager but `npm` and `yarn` should work too.
 
+1. Install your dependencies:
+
 ```bash
 pnpm install
 ```
 
+2. Generate your admin seed, admin did, and ComposeDB configuration file:
+
+```bash
+npm run generate
+```
+
+3. Run the application (make sure you are using node version 16):
+
 #### Development
 ```bash
-pnpm dev
+pnpm begin
 ```
 
 #### Build
@@ -116,12 +103,6 @@ Common types according to [commitlint-config-conventional (based on the Angular 
 - revert
 - style
 - test
-
-# Acknowledgements
-
-Original template was forked from https://github.com/wslyvh/nexth
-
-Thank you @wslyvh 🙏
 
 <hr/>
 
