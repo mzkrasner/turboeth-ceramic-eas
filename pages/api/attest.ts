@@ -29,13 +29,12 @@ export default async function createAttestation(req: NextApiRequest, res: NextAp
     const key = fromString(seed, 'base16')
     const provider = new Ed25519Provider(key)
     const staticDid = new DID({
-      // @ts-expect-error: Let's ignore a compile error like this unreachable code
       provider,
       // @ts-expect-error: Let's ignore a compile error like this unreachable code
       resolver: KeyResolver.getResolver(),
     })
     await staticDid.authenticate()
-    // @ts-expect-error: Let's ignore a compile error like this unreachable code
+
     ceramic.did = staticDid
     return staticDid
   }
@@ -43,7 +42,7 @@ export default async function createAttestation(req: NextApiRequest, res: NextAp
   try {
     if (uniqueKey) {
       const did = await authenticateDID(uniqueKey)
-      // @ts-expect-error: Let's ignore a compile error like this unreachable code
+
       composeClient.setDID(did)
       console.log(req.body)
       const data: any = await composeClient.executeQuery(`

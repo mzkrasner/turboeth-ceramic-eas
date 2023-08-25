@@ -136,6 +136,7 @@
     "@types/react-dom": "18.0.10",
     "@types/styled-components": "^5.1.26",
     "@wagmi/cli": "^1.1.0",
+    "esbuild": "0.16.5",
     "autoprefixer": "^10.4.13",
     "eslint": "8.30.0",
     "eslint-config-next": "13.4.0",
