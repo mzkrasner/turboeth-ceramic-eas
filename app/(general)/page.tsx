@@ -19,7 +19,7 @@ import { EASContractAddress } from '../utils/utils'
 
 declare global {
   interface Window {
-    ethereum?: 'Ethereum | undefined'
+    ethereum: import('ethers').providers.ExternalProvider
   }
 }
 
