@@ -134,7 +134,7 @@ export function AttestationItem({ data }: Props) {
               e.stopPropagation()
               setConfirming(true)
               try {
-                const provider = new ethers.providers.Web3Provider(window.ethereum as unknown as ethers.providers.ExternalProvider)
+                const provider = new ethers.providers.Web3Provider((window as any).ethereum as unknown as ethers.providers.ExternalProvider)
                 const signer = provider.getSigner()
                 console.log(signer)
                 eas.connect(signer)

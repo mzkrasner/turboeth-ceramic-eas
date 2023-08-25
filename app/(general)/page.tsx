@@ -17,12 +17,6 @@ import { EASContractAddress } from '../utils/utils'
 
 // import { CUSTOM_SCHEMAS, EASContractAddress, baseURL, getAddressForENS } from '../utils/utils'
 
-declare global {
-  interface Window {
-    ethereum: import('ethers').providers.ExternalProvider
-  }
-}
-
 const Title = styled.div`
   color: #163a54;
   font-size: 22px;
@@ -184,7 +178,9 @@ export default function Home() {
                         } else {
                           setAttesting(true)
                           try {
-                            const provider = new ethers.providers.Web3Provider(window.ethereum as unknown as ethers.providers.ExternalProvider)
+                            const provider = new ethers.providers.Web3Provider(
+                              (window as any).ethereum as unknown as ethers.providers.ExternalProvider
+                            )
                             const signer = provider.getSigner()
 
                             eas.connect(signer)
