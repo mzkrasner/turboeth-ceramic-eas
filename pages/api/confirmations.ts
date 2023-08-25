@@ -3,19 +3,21 @@ import { ComposeClient } from '@composedb/client'
 import { RuntimeCompositeDefinition } from '@composedb/types'
 import { NextApiRequest, NextApiResponse } from 'next'
 
+import { env } from '@/env.mjs'
+
 import { definition } from '../../src/__generated__/definition.js'
 
-const uniqueKey = '4872b11e9ab9916deb5c1d4114962e79752bc4944ebe866590da8b1226097303'
+const uniqueKey = env.AUTHOR_KEY
 
 export default async function createAttestation(req: NextApiRequest, res: NextApiResponse<any>) {
   const { account } = req.body
 
   //instantiate a ceramic client instance
-  const ceramic = new CeramicClient('http://localhost:7007')
+  const ceramic = new CeramicClient('https://ceramic-temp.hirenodes.io')
 
   //instantiate a composeDB client instance
   const composeClient = new ComposeClient({
-    ceramic: 'http://localhost:7007',
+    ceramic: 'https://ceramic-temp.hirenodes.io',
     definition: definition as RuntimeCompositeDefinition,
   })
 
@@ -78,6 +80,6 @@ export default async function createAttestation(req: NextApiRequest, res: NextAp
     // @ts-expect-error: Let's ignore a compile error like this unreachable code
     return res.json(confirmations)
   } catch (err) {
-    return res.json({ error: 'There was an error processing your write request' })
+    return res.json({ error: 'There are no confirmations to retrieve' })
   }
 }

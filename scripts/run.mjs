@@ -7,19 +7,6 @@ import { writeComposite } from './composites.mjs'
 const events = new EventEmitter()
 const spinner = ora()
 
-const ceramic = spawn('npm', ['run', 'ceramic'])
-ceramic.stdout.on('data', (buffer) => {
-  console.log('[Ceramic]', buffer.toString())
-  if (buffer.toString().includes('0.0.0.0:7007')) {
-    events.emit('ceramic', true)
-    spinner.succeed('ceramic node started')
-  }
-})
-
-ceramic.stderr.on('data', (err) => {
-  console.log(err.toString())
-})
-
 const bootstrap = async () => {
   // TODO: convert to event driven to ensure functions run in correct orders after releasing the bytestream.
   // TODO: check if .grapql files match their .json counterparts
@@ -35,15 +22,6 @@ const bootstrap = async () => {
   }
 }
 
-const graphiql = async () => {
-  spinner.info('[GraphiQL] starting graphiql')
-  const graphiql = spawn('node', ['./scripts/graphiql.mjs'])
-  spinner.succeed('[GraphiQL] graphiql started')
-  graphiql.stdout.on('data', (buffer) => {
-    console.log('[GraphiqQL]', buffer.toString())
-  })
-}
-
 const next = async () => {
   const next = spawn('npm', ['run', 'dev'])
   spinner.info('[NextJS] starting nextjs app')
@@ -53,23 +31,8 @@ const next = async () => {
 }
 
 const start = async () => {
-  try {
-    spinner.start('[Ceramic] Starting Ceramic node\n')
-    events.on('ceramic', async (isRunning) => {
-      if (isRunning) {
-        await bootstrap()
-        await graphiql()
-        await next()
-      }
-      if (isRunning === false) {
-        ceramic.kill()
-        process.exit()
-      }
-    })
-  } catch (err) {
-    ceramic.kill()
-    spinner.fail(err)
-  }
+  await bootstrap()
+  await next()
 }
 
 start()

@@ -17,11 +17,11 @@ export default async function createAttestation(req: NextApiRequest, res: NextAp
   const { message, uid, account } = req.body
   console.log(req.body, '42')
   //instantiate a ceramic client instance
-  const ceramic = new CeramicClient('http://localhost:7007')
+  const ceramic = new CeramicClient('https://ceramic-temp.hirenodes.io')
 
   //instantiate a composeDB client instance
   const composeClient = new ComposeClient({
-    ceramic: 'http://localhost:7007',
+    ceramic: 'https://ceramic-temp.hirenodes.io',
     definition: definition as RuntimeCompositeDefinition,
   })
 
