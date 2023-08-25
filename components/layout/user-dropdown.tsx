@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BinaryIcon, LayoutDashboard, LogOutIcon } from 'lucide-react'
+import { LayoutDashboard, LogOutIcon, LucideBinary } from 'lucide-react'
 import Link from 'next/link'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -21,7 +21,7 @@ export function UserDropdown() {
         <PopoverContent>
           <div className="w-full rounded-md p-2 ">
             <Link className="user-dropdown-menu-item" href="/">
-              <BinaryIcon className="h-4 w-4" />
+              <LucideBinary className="h-4 w-4" />
               <p className="text-sm">Home</p>
             </Link>
             <Link className="user-dropdown-menu-item " href="/dashboard">

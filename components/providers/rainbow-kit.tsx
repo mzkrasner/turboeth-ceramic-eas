@@ -21,10 +21,10 @@ const connectors = connectorsForWallets([
     groupName: 'Recommended',
     wallets: [
       injectedWallet({ chains }),
-      metaMaskWallet({ chains }),
-      rainbowWallet({ chains }),
+      metaMaskWallet({ chains, projectId: 'undefined' }),
+      rainbowWallet({ chains, projectId: 'undefined' }),
       coinbaseWallet({ chains, appName: siteConfig.name }),
-      walletConnectWallet({ chains }),
+      walletConnectWallet({ chains, projectId: 'undefined' }),
     ],
   },
 ])
