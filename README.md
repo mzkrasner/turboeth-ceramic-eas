@@ -1,37 +1,16 @@
-# ⚡ TurboETH with Ceramic and EAS 
+# ⚡ TurboETH with Ceramic and EAS - Production
+
+**This branch can be used as a reference for how to run an application in production using Ceramic/ComposeDB on a preconfigured cloud-hosted endpoint with hirenodes.io using the same model definitions**
+
+Please return to the 'main' branch for how to run the application locally.
+
 Web3 App Template starter kit using Next.js, RainbowKit, SIWE, Ceramic, and EAS
 
 For more on TurboETH, visit the [TurboETH Documentation](https://docs.turboeth.xyz)
 
 # Getting Started
 
-The `pnpm` CLI is the recommended package manager but `npm` and `yarn` should work too.
-
-1. Install your dependencies:
-
-```bash
-pnpm install
-```
-
-2. Generate your admin seed, admin did, and ComposeDB configuration file:
-
-```bash
-npm run generate
-```
-
-3. Create a .env file and enter the three required environment variables outlined in .env.example
-
-4. Run the application (make sure you are using node version 16):
-
-#### Development
-```bash
-pnpm begin
-```
-
-#### Build
-```bash
-pnpm build
-```
+For local development instructions please return to the 'main' branch
 
 ### Web3 Core
 - [WAGMI CLI](https://wagmi.sh/cli/getting-started) - Automatic React Hook Generation
