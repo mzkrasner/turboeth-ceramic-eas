@@ -5,8 +5,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { definition } from '../../src/__generated__/definition.js'
 
-const uniqueKey = '4872b11e9ab9916deb5c1d4114962e79752bc4944ebe866590da8b1226097303'
-
 export default async function createAttestation(req: NextApiRequest, res: NextApiResponse<any>) {
   const { account } = req.body
 
@@ -78,6 +76,6 @@ export default async function createAttestation(req: NextApiRequest, res: NextAp
     // @ts-expect-error: Let's ignore a compile error like this unreachable code
     return res.json(confirmations)
   } catch (err) {
-    return res.json({ error: 'There was an error processing your write request' })
+    return res.json({ error: 'No confirmations to retrieve' })
   }
 }
