@@ -1,9 +1,7 @@
-![image](https://user-images.githubusercontent.com/3408362/230732083-1c98e451-08af-41c2-b522-126370e8c6a5.png)
-
 # ⚡ TurboETH with Ceramic and EAS 
 Web3 App Template starter kit using Next.js, RainbowKit, SIWE, Ceramic, and EAS
 
-For more on TurboETH, visit the [Documentation](https://docs.turboeth.xyz)
+For more on TurboETH, visit the [TurboETH Documentation](https://docs.turboeth.xyz)
 
 # Getting Started
 
